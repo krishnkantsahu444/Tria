@@ -10,8 +10,8 @@ test('calls onAdd when form submitted', async () => {
   render(<AddContact onAdd={onAdd} />)
 
   await user.type(screen.getByPlaceholderText(/name/i), 'New Name')
-  await user.type(screen.getByPlaceholderText(/phone/i), '123')
-  await user.type(screen.getByPlaceholderText(/email/i), 'n@e')
+  await user.type(screen.getByPlaceholderText(/phone/i), '1234567890')
+  await user.type(screen.getByPlaceholderText(/email/i), 'test@example.com')
   await user.click(screen.getByRole('button', { name: /add/i }))
 
   expect(onAdd).toHaveBeenCalledTimes(1)
